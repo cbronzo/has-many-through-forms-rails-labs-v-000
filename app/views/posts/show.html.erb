@@ -10,11 +10,9 @@
     </ul>
     
    <label>Users</label>
-    <ul>
-       <% @users.uniq.each do |user| %>
-       <li><%= user %></li>
-     <%end%>
-  </ul>
+    <% @post.users.uniq.each do |user| %>
+    <li><%= link_to user.username, user %></li>
+  <% end %>
   
   <%= form_for @post.comments.build do |f| %>
   

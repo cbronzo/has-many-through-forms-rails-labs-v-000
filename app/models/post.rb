@@ -12,5 +12,14 @@ class Post < ActiveRecord::Base
       self.categories << cat
     end
   end
+  
+  def user_attriburtes=(user_a)
+    user_a.values.each do |user_a|
+      user = User.find_or_create_by(user_a)
+      self.post_comm
+      self.user << user
+    end
+  
+  
 
 end

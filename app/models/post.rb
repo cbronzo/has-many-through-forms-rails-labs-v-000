@@ -6,19 +6,19 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :categories
   
   
-  def categories_attributes=(cat)
-    cat.values.each do |cat|
-      cat = Category.find_or_create_by(cat)
-      self.categories << cat
+  def comment_attributes=(comment_attributes)
+    comment_attrbute.values.each do |comment_attribute|
+      comment = Comment.find_or_create_by(comment_attribute)
+      self.post_comments.build(comment: comment)
     end
   end
-  
-  def user_attriburtes=(user_a)
-    user_a.values.each do |user_a|
-      user = User.find_or_create_by(user_a)
-      self.post.comment
+   def user_attriburtes=(user_attributes)
+    user_attributes.values.each do |user_attribute|
+      user = User.find_or_create_by(user_attribute)
+      self.post_comm
       self.user << user
     end
+  end
   
   
 

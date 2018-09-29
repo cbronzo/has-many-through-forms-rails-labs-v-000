@@ -14,11 +14,9 @@ Comments:<br />
     <li><%= comm.user.username %> says: <%= comm.content %></li>
   <% end %>
 </ul>
-
-Commentators:<br />
 <ul>
-  <% @post.users.uniq.each do |u| %>
-    <li><%= link_to u.username, user_path(u)  %></li>
+  <% @post.users.uniq.each do |user| %>
+    <li><%= link_to user.username, user_path(user)  %></li>
   <% end %>
 </ul>
 

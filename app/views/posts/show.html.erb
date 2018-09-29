@@ -27,11 +27,11 @@ Comments:<br />
 
   <%= f.fields_for :user, @post.comments.build.build_user do |user_fields| %>
     <%= user_fields.text_field :username %>
-  <% end %><br /><br />
+  <% end %><br>
   <%= f.label :content %>
   <%= f.text_field :content %>
     
-  <br /><br />
+ 
 
   <%= f.submit %>
 <% end %>

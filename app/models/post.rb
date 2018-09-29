@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
    def user_attriburtes=(user_attributes)
     user_attributes.values.each do |user_attribute|
       user = User.find_or_create_by(user_attribute)
-      self.post_comments
+      self.post.comments
       self.user << user
     end
   end
